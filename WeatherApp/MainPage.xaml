@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WeatherApp.MainPage"
+             Shell.NavBarIsVisible="false">
+
+    <Grid>
+        <Image Source="background.jpg" Aspect="AspectFill" />
+
+        
+        <ScrollView>
+            <VerticalStackLayout Padding="30,0" Spacing="25">
+                
+                <Image
+                    Source="cloudy.pnd "
+                    HeightRequest="100"
+                    Aspect="AspectFit"/>
+
+                <Label
+                    Text="Weather Forcast"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1"/>
+
+                <Label
+                    Text="{Binding CurrentCity}" Style="{StaticResource SubHeadline}"/>
+
+                <HorizontalStackLayout Spacing="25">
+                    <Image
+                        Source="celsius.png"
+                        HeightRequest="70"
+                        WidthRequest="70"
+                        Aspect="AspectFill"/>
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="{Binding Temperature, StringFormat='{0:F0}°C'}" Style="{StaticResource SubHeadline}" FontSize="50"/>
+                        <Label
+                            Text="Temperature" Style="{StaticResource Caption}" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="25">
+                    <Image
+                        Source="humidity.png"
+                        HeightRequest="70"
+                        WidthRequest="70"
+                        Aspect="AspectFill"/>
+                    <VerticalStackLayout>
+                        <Label
+                            Text="{Binding Humidity , StringFormat='{}{0} %'}" Style="{StaticResource SubHeadline}" FontSize="50"/>
+                        <Label
+                            Text="Humidity" Style="{StaticResource Caption}" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="25">
+                    <Image
+                        Source="wind.png"
+                        HeightRequest="70"
+                        WidthRequest="70"
+                        Aspect="AspectFill"/>
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="{Binding WindSpeed , StringFormat='{}{0} km/h'}" Style="{StaticResource SubHeadline}" FontSize="50"/>
+                        <Label
+                            Text="Wind Speed" Style="{StaticResource Caption}" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+
+
+                <HorizontalStackLayout Spacing="25">
+                    <Image
+                        Source="clouds.png"
+                        HeightRequest="70"
+                        WidthRequest="70"
+                        Aspect="AspectFill"/>
+
+                    <VerticalStackLayout>
+                        <Label
+                            Text="{Binding CloudCover , StringFormat='{}{0} %'}" Style="{StaticResource SubHeadline}" FontSize="50"/>
+                        <Label
+                            Text="Cloud Cover" Style="{StaticResource Caption}" VerticalOptions="CenterAndExpand" TextColor="White"/>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </Grid>
+    
+
+</ContentPage>
